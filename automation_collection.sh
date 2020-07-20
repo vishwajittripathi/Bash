@@ -3,11 +3,8 @@ filevalue() {
 export FileName="OTG_PAY_PATH.txt"
 }
 copy_files() {
-
 filevalue
-
 cat $FileName | while read next
-
 do
 echo $next
 cd "$next"
