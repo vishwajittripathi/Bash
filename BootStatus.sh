@@ -13,14 +13,14 @@ cd ../logs/
 sleep 10;
 newUrl=$(find . -name "ngrok.log" -exec grep "url=https:" {} \; |  awk '{print $8}')
 echo "$SERVICE running now .."
-echo "$newUrl"  | mail -s "Ngrok Webpida URL" webpida@outlook.com  #<< EOF
+echo "$newUrl"  | mail -s "Ngrok Webpida URL" w@outlook.com  #<< EOF
 #echo "$newUrl"
 #EOF
 else 
 cd ~/script/logs/
 sleep 10;
 url=$(find . -name "ngrok.log" -exec grep "url=https:" {} \; |  awk '{print $8}')
-echo "$url" | mail -s "Ngrok Webpida URL"  webpida@outlook.com  #<< EOF
+echo "$url" | mail -s "Ngrok Webpida URL"  w@outlook.com  #<< EOF
 #echo "$url"
 #EOF
 fi
@@ -46,7 +46,7 @@ cmd=$(systemctl status nginx | grep "active" | awk '{print $2}')
 pid=$(systemctl status nginx | grep "Main PID" | awk '{print $3}')
 ngrok_url
 fi
-mail -s "System Status" webpida@outlook.com << EOF
+mail -s "System Status" w@outlook.com << EOF
 
 Hi Vishwajit,
 
