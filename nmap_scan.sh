@@ -22,7 +22,6 @@ do
 			echo "DB connect"
 			echo "#psql -h $iptoConnect -p 5432 -d staggdb -U dbusr -W" >>scan_report.txt
 			echo "pass:23#3v93k" >>scan_report.txt
-			#echo "Public IP:`dig @ns.sslip.io txt ip.sslip.io +short`" >>scan_report.txt
 			fi
 		       fi
 		done
