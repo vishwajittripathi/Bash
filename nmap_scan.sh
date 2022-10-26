@@ -3,8 +3,6 @@ echo "Start"
 cp /dev/null scan_report.txt
 nmap -sV -p 22 192.168.1.0/24 | while read  num
 do
-	#counter=`nmap -sV -p 22 192.168.1.0/24 | wc -l | cut -d " " -f1`	
-	#echo "$counter"
 	for word in $num;
 		do 
 			#echo "$counter"
