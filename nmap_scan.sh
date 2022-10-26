@@ -18,8 +18,11 @@ do
 			then
 				iptoConnect=$(awk -v N=1 -v pattern="open" '{i=(1+(i%N));if (buffer[i]&& $0 ~ pattern) print buffer[i]; buffer[i]=$0;}' scan_report.txt | awk {'print $3'})
 			#sed '1N; $!N; /.*\n.*\n.*open/P; D' scan_report.txt
-			echo "#ssh vishwajit@$iptoConnect"
-
+			echo "#ssh vishwajit@$iptoConnect" >scan_report.txt
+			echo "DB connect"
+			echo "#psql -h $iptoConnect -p 5432 -d staggdb -U dbusr -W" >>scan_report.txt
+			echo "pass:23#3v93k" >>scan_report.txt
+			#echo "Public IP:`dig @ns.sslip.io txt ip.sslip.io +short`" >>scan_report.txt
 			fi
 		       fi
 		done
